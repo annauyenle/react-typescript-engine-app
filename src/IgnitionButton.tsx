@@ -5,8 +5,12 @@ const IgnitionButton = (): JSX.Element => {
   const [stop, setStop] = React.useState(false)
 
   return (
-    <div>
-      <input
+
+    <div className="center-screen">
+        <h1 className="display-4">Test The Engine Ignition</h1>
+        <br />
+        <div className="engine-list-container">
+        <input
         type="radio"
         value="Start"
         checked={start}
@@ -23,9 +27,8 @@ const IgnitionButton = (): JSX.Element => {
           ev: React.ChangeEvent<HTMLInputElement>,
         ): void => {alert("ALERT! ENGINE STOPPED."); setStart(false); setStop(true)}}
       /> Stop Ignition
-    </div>
-
-
+        </div>
+      </div>
   );
 };
 

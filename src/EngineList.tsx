@@ -8,16 +8,20 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const engines: string[] = ["I4", "I5", "V6", "V8", "V10", "V12", "H4", "H6"];
 
+const clickHandler = (engine:string) => {
+  alert(`hello from ${engine}`)
+}
+
 const Engine: React.FC<ButtonProps> = ({ engine, ...props }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button {...props} variant="outline-light" size="lg" block onClick={handleShow}>
+      <Button {...props} variant="outline-light" size="lg" block onClick={() => clickHandler(engine)}>
         {engine}
       </Button>
-
+{/* 
       <Modal show={show} onHide={handleClose} animation={true}>
         <Modal.Header closeButton>
           <Modal.Title>{engine} Ignition System Test</Modal.Title>
@@ -30,7 +34,7 @@ const Engine: React.FC<ButtonProps> = ({ engine, ...props }) => {
             Close
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   )
 }
