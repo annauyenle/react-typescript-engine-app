@@ -1,35 +1,36 @@
-import React from 'react'
+import React from 'react';
 
 const IgnitionButton = (): JSX.Element => {
-  const [start, setStart] = React.useState(false)
-  const [stop, setStop] = React.useState(false)
+	const [start, setStart] = React.useState(false);
+	const [stop, setStop] = React.useState(false);
 
-  return (
-
-    <div className="center-screen">
-        <h1 className="display-4">Test The Engine Ignition</h1>
-        <br />
-        <div className="engine-list-container">
-        <input
-        type="radio"
-        value="Start"
-        checked={start}
-        onChange={(
-          ev: React.ChangeEvent<HTMLInputElement>,
-        ): void => {alert(`ALERT! ENGINE STARTED.`); setStart(true); setStop(false)}}
-      /> Start Ignition
-      <br />
-      <input
-        type="radio"
-        value="Stop"
-        checked={stop}
-        onChange={(
-          ev: React.ChangeEvent<HTMLInputElement>,
-        ): void => {alert("ALERT! ENGINE STOPPED."); setStart(false); setStop(true)}}
-      /> Stop Ignition
-        </div>
-      </div>
-  );
+	return (
+		<div className='engine-list-container'>
+			<input
+				type='radio'
+				value='Start'
+				checked={start}
+				onChange={(ev: React.ChangeEvent<HTMLInputElement>): void => {
+					alert(`ALERT! ENGINE STARTED.`);
+					setStart(true);
+					setStop(false);
+				}}
+			/>{' '}
+			Start Ignition
+			<br />
+			<input
+				type='radio'
+				value='Stop'
+				checked={stop}
+				onChange={(ev: React.ChangeEvent<HTMLInputElement>): void => {
+					alert('ALERT! ENGINE STOPPED.');
+					setStart(false);
+					setStop(true);
+				}}
+			/>{' '}
+			Stop Ignition
+		</div>
+	);
 };
 
 export default IgnitionButton;
