@@ -13,14 +13,12 @@ class EnginePage extends React.Component<EngineProps> {
 	render() {
 		return (
 			<div className='center-screen'>
-				<h1 className='display-4'>
+				<h1 className='display-4 page-title'>
 					Test The {this.props.match.params.engine} Engine
 				</h1>
-				<br />
-				
-					<IgnitionButton engine={this.props.match.params.engine} />
-          <div className='engine-list-container'>
-            <br />
+				<IgnitionButton engine={this.props.match.params.engine} />
+				<div className='engine-list-container'>
+					<br />
 					<Button
 						variant='outline-light'
 						size='lg'

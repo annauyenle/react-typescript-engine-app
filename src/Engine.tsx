@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
-import IgnitionButton from './IgnitionButton';
+import React from 'react';
+import { Button } from 'react-bootstrap';
 
 interface EngineProp extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	engine: string;
 }
 
 const Engine: React.FC<EngineProp> = ({ engine, ...props }) => {
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 	return (
 		<>
 			<Button
@@ -17,24 +13,10 @@ const Engine: React.FC<EngineProp> = ({ engine, ...props }) => {
 				variant='outline-light'
 				size='lg'
 				block
-				onClick={handleShow}
+				onClick={() => (window.location.href = `/engine/${engine}`)}
 			>
 				{engine}
 			</Button>
-
-			<Modal show={show} onHide={handleClose} animation={true}>
-				<Modal.Header closeButton>
-					<Modal.Title>{engine} Ignition System Test</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>
-					<IgnitionButton engine={engine} />
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant='secondary' size='sm' onClick={handleClose}>
-						Close
-					</Button>
-				</Modal.Footer>
-			</Modal>
 		</>
 	);
 };
