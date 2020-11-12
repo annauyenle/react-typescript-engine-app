@@ -5,7 +5,7 @@ interface engineProp {
 	engine: string;
 }
 
-const IgnitionButton = ({ engine }: engineProp): JSX.Element => {
+const Ignition = ({ engine }: engineProp): JSX.Element => {
 	const [start, setStart] = React.useState(false);
 	const [stop, setStop] = React.useState(false);
 	const [modal, setModal] = React.useState(false);
@@ -52,4 +52,4 @@ const IgnitionButton = ({ engine }: engineProp): JSX.Element => {
 	);
 };
 
-export default IgnitionButton;
+export default Ignition;

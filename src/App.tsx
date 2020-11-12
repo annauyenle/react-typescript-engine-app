@@ -1,14 +1,16 @@
-import * as React from 'react';
-import EngineList from './EngineList';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import EnginePage from './EnginePage';
+import IgnitionPage from './IgnitionPage';
 
 class App extends React.Component {
 	render() {
-		return (
-			<div className='center-screen'>
-				<h1 className='display-4 page-title'>Select Your Automobile Engine</h1>
-				<EngineList />
-			</div>
-		);
+	return (
+		<Router>
+			<Route path='/' exact component={EnginePage} />
+			<Route path='/engine/:engine' component={IgnitionPage} />
+		</Router>
+	);
 	}
 }
 

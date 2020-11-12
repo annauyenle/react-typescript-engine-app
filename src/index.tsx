@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import AppRouter from './AppRouter';
+import App from './App';
 
-render(<AppRouter />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
