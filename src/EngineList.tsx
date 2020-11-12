@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import React from 'react';
 import Engine from './Engine';
 
 const engines: string[] = ['I4', 'I5', 'V6', 'V8', 'V10', 'V12', 'H4', 'H6'];

@@ -27,7 +27,7 @@ const Engine: React.FC<EngineProp> = ({ engine, ...props }) => {
 					<Modal.Title>{engine} Ignition System Test</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<IgnitionButton />
+					<IgnitionButton engine={engine} />
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' size='sm' onClick={handleClose}>

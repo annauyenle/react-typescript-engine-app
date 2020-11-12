@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import EngineList from './EngineList';
 
 class App extends React.Component {
@@ -7,9 +7,7 @@ class App extends React.Component {
 			<div className='center-screen'>
 				<h1 className='display-4'>Select Your Automobile Engine</h1>
 				<br />
-				<div className='engine-list-container'>
-					<EngineList />
-				</div>
+				<EngineList />
 			</div>
 		);
 	}
